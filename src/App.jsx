@@ -207,20 +207,27 @@ const App = () => {
   }, [])
 
   return (
-    <div className='min-h-screen bg-gradient-to-b from-indigo-900 via-blue-900 to-gray-800'>
-      <Navbar onSearch={handleSearch}/>
-      {loading ? (
-        <div className="flex justify-center items-center mt-10">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-gray-300" />
-        </div>
-      ) : (
-        <>
-          {weatherData && <Main_section weather={weatherData} />}
-          {weatherData && <Cards weatherdetail={weatherData} />}
-          {forecast.length > 0 && <Next5daysforecast forecast={forecast} />}
-        </>
-      )}
-      <Footer/>
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-indigo-900 via-blue-900 to-gray-800">
+
+        {/* Main content grows to fill space */}
+        <main className="flex-grow">
+          <Navbar onSearch={handleSearch} />
+
+          {loading ? (
+            <div className="flex justify-center items-center mt-10">
+              <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-gray-300"></div>
+            </div>
+          ) : (
+            <>
+              {weatherData && <Main_section weather={weatherData} />}
+              {weatherData && <Cards weatherdetail={weatherData} />}
+              {weatherData && <Next5daysforecast forecast={forecast} />}
+            </>
+          )}
+        </main>
+
+        {/* Footer sticks to bottom */}
+        <Footer />
     </div>
   )
 }

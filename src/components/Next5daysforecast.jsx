@@ -1,4 +1,3 @@
-import React from "react";
 
 const Next5daysforecast = ({ forecast }) => {
   if (!forecast || forecast.length === 0) return null;
@@ -19,11 +18,18 @@ const Next5daysforecast = ({ forecast }) => {
             {forecast.map((day, index) => (
             <div
                 key={index}
-                className="bg-white/10 backdrop-blur-md rounded-2xl shadow-lg p-6 flex flex-col items-center text-white"
+                className="bg-white/10 backdrop-blur-md rounded-2xl shadow-lg p-6 flex flex-col items-center text-white cursor-pointer hover:scale-105 hover:shadow-2xl transition-transform duration-300 ease-in-out"
             >
                 <h3 className="text-lg font-semibold mb-2">
                 {getDayName(day.date)}
                 </h3>
+                {/* Date display */}
+                <p className="text-sm mb-2">
+                  {new Date(day.date).toLocaleDateString("en-US", {
+                    day: "numeric",
+                    month: "short",
+                  })}
+                </p>
                 <img
                 src={`http://openweathermap.org/img/wn/${day.icon}@2x.png`}
                 alt={day.weather}

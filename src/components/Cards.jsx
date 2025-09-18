@@ -1,6 +1,4 @@
-import React from 'react'
 import { FaTemperatureArrowDown, FaTemperatureArrowUp } from 'react-icons/fa6'
-import { IoSunnySharp } from 'react-icons/io5'
 import { MdAir } from 'react-icons/md'
 import { WiHumidity } from 'react-icons/wi'
 

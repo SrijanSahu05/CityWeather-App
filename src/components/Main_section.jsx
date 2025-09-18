@@ -1,7 +1,4 @@
 
-import React from 'react'
-import { IoSunnySharp } from 'react-icons/io5'
-
 const Main_section = ({ weather }) => {
     const currentDate = new Date();
 
@@ -34,7 +31,6 @@ const Main_section = ({ weather }) => {
                     Temperature
                      </p>
                 </div>
-
 
                 {/* Location Info */}
                 <div className="text-center md:text-right">
